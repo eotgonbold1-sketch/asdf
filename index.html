@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiveChat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="overlay" id="overlay">
+      <div class="join-box">
+        <div class="join-logo">O</div>
+        <h1>LiveChat</h1>
+        <p>Real-time. No fluff.</p>
+        <div class="input-row">
+          <input
+            type="text"
+            id="usernameInput"
+            placeholder="Enter your name..."
+            maxlength="20"
+            autocomplete="off"
+          />
+          <button id="joinBtn">Join ↵</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="app" id="app">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <span class="logo">O LiveChat</span>
+          <span class="status-dot" id="statusDot"></span>
+        </div>
+        <div class="sidebar-section">
+          <p class="sidebar-label">Online</p>
+          <ul id="userList"></ul>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <span class="channel-name"># general</span>
+          </div>
+          <span class="connection-status" id="connectionStatus">Connected</span>
+        </header>
+
+        <div class="messages" id="messages"></div>
+
+        <div class="typing-bar" id="typingBar"></div>
+
+        <div class="input-area">
+          <input
+            type="text"
+            id="msgInput"
+            placeholder="Message #general..."
+            autocomplete="off"
+            maxlength="300"
+          />
+          <button id="sendBtn">Send</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
